@@ -1,0 +1,2 @@
+class DiaperOne < ApplicationRecord
+end

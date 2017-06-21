@@ -1,0 +1,2 @@
+class LeftB < ApplicationRecord
+end
