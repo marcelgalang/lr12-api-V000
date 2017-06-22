@@ -1,5 +1,4 @@
 class LeftB < ApplicationRecord
-  belongs_to :user
-  validates :starttime, presence: true
-  validates :duration, presence: true
+  # belongs_to :user
+
 end

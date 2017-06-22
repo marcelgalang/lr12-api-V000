@@ -1,5 +1,4 @@
 class DiaperOne < ApplicationRecord
-  belongs_to :user
-  validates :count, presence: true
+  # belongs_to :user
 
 end

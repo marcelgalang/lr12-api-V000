@@ -1,18 +1,20 @@
 class Api::LeftBsController < ApplicationController
 
+  include ActionController::Serialization
+
   def index
     render json:
-    LeftBs.order(:starttime).to_json
+    LeftB.order(:starttime).to_json
   end
 
   def show
     render json:
-    LeftBs.find_by(id: params[:id]).to_json
+    LeftB.find_by(id: params[:id]).to_json
   end
 
   def create
     left =
-    LeftBs.create(left_bs_params)
+    LeftB.create(left_bs_params)
     if left.save
           render json: { id: left.id, success: 'ok' }
       else
@@ -21,7 +23,7 @@ class Api::LeftBsController < ApplicationController
   end
 
   def destroy
-      left = LeftBs.find_by(id: params[:id])
+      left = LeftB.find_by(id: params[:id])
       if left.delete
           render json: { sucess: 'ok' }
       else

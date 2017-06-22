@@ -1,5 +1,7 @@
 class Api::DiaperOnesController < ApplicationController
 
+  include ActionController::Serialization
+
   def index
     render json:
     DiaperOne.order(:starttime).to_json
@@ -31,7 +33,7 @@ class Api::DiaperOnesController < ApplicationController
 
   private
 
-  def DiaperTwosController_params
+  def DiaperOnesController_params
     params.require(:diaper_one).permit(:count, :createDate)
   end
 end

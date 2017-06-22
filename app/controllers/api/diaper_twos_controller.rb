@@ -1,4 +1,7 @@
 class Api::DiaperTwosController < ApplicationController
+
+  include ActionController::Serialization
+  
   def index
     render json:
     DiaperTwo.order(:starttime).to_json

@@ -1,17 +1,20 @@
 class Api::RightBsController < ApplicationController
+
+  include ActionController::Serialization
+
   def index
     render json:
-    RightBs.order(:starttime).to_json
+    RightB.all.to_json
   end
 
   def show
     render json:
-    RightBs.find_by(id: params[:id]).to_json
+    RightB.find_by(id: params[:id]).to_json
   end
 
   def create
     right =
-    RightBs.create(right_bs_params)
+    RightB.create(right_bs_params)
     if right.save
           render json: { id: right.id, success: 'ok' }
       else
@@ -20,7 +23,7 @@ class Api::RightBsController < ApplicationController
   end
 
   def destroy
-      right = RightBs.find_by(id: params[:id])
+      right = RightB.find_by(id: params[:id])
       if right.delete
           render json: { sucess: 'ok' }
       else
