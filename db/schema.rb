@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170621203848) do
+ActiveRecord::Schema.define(version: 20170715140427) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,34 @@ ActiveRecord::Schema.define(version: 20170621203848) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "user_diaper_ones", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "diaper_one_id"
+    t.index ["diaper_one_id"], name: "index_user_diaper_ones_on_diaper_one_id", using: :btree
+    t.index ["user_id"], name: "index_user_diaper_ones_on_user_id", using: :btree
+  end
+
+  create_table "user_diaper_twos", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "diaper_twos_id"
+    t.index ["diaper_twos_id"], name: "index_user_diaper_twos_on_diaper_twos_id", using: :btree
+    t.index ["user_id"], name: "index_user_diaper_twos_on_user_id", using: :btree
+  end
+
+  create_table "user_left_bs", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "left_b_id"
+    t.index ["left_b_id"], name: "index_user_left_bs_on_left_b_id", using: :btree
+    t.index ["user_id"], name: "index_user_left_bs_on_user_id", using: :btree
+  end
+
+  create_table "user_right_bs", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "right_b_id"
+    t.index ["right_b_id"], name: "index_user_right_bs_on_right_b_id", using: :btree
+    t.index ["user_id"], name: "index_user_right_bs_on_user_id", using: :btree
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "login"
     t.string   "name"
@@ -52,4 +80,12 @@ ActiveRecord::Schema.define(version: 20170621203848) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "user_diaper_ones", "diaper_ones"
+  add_foreign_key "user_diaper_ones", "users"
+  add_foreign_key "user_diaper_twos", "diaper_twos", column: "diaper_twos_id"
+  add_foreign_key "user_diaper_twos", "users"
+  add_foreign_key "user_left_bs", "left_bs"
+  add_foreign_key "user_left_bs", "users"
+  add_foreign_key "user_right_bs", "right_bs"
+  add_foreign_key "user_right_bs", "users"
 end
