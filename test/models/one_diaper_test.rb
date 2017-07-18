@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class DiaperTwoTest < ActiveSupport::TestCase
+class OneDiaperTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

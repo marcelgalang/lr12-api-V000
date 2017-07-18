@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class RightBsControllerTest < ActionDispatch::IntegrationTest
+class TwoDiaperTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

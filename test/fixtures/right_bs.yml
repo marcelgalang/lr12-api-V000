@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  duration: 1
-  starttime: 2017-06-21 16:36:48
-  endtime: 2017-06-21 16:36:48
+  user: 
+  startTime: 1
+  endTime: 1
 
 two:
-  duration: 1
-  starttime: 2017-06-21 16:36:48
-  endtime: 2017-06-21 16:36:48
+  user: 
+  startTime: 1
+  endTime: 1

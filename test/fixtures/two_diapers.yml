@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  user: 
   count: 1
-  createDate: 2017-06-21 16:38:48
 
 two:
+  user: 
   count: 1
-  createDate: 2017-06-21 16:38:48
